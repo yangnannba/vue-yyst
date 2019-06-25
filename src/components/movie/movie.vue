@@ -1,11 +1,16 @@
 <template>
   <div class="movie">
+		
 		<v-header :bg="bg">
 			{{title}}
 		</v-header>
+		
+		<router-view></router-view>
+		
 		<tab-bar :bg="bg">
 		</tab-bar>		
-movie
+		
+
   </div>
 </template>
 

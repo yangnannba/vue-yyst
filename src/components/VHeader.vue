@@ -25,12 +25,13 @@ export default {
 	top: 0;
 	left:0;
 	width:100%;
+	z-index: 9;
 }
 .vheader h1.h1{
-	font-size: 1rem;
-	height:2rem;
+	font-size: 0.8rem;
+	height:1.75rem;
 	text-align: center;
-	line-height: 2rem;
+	line-height: 1.75rem;
 	color:#fff;
 }
 </style>
