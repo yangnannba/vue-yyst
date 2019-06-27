@@ -12,6 +12,9 @@ import MovieDetails from '@/components/movie/MovieDetails'
 import BookList from '@/components/book/BookList'
 import BookDetails from '@/components/book/BookDetails'
 
+import PicList from '@/components/pic/PicList'
+import PicDetails from '@/components/pic/PicDetails'
+
 Vue.use(Router)
 
 export default new Router({
@@ -40,7 +43,12 @@ export default new Router({
     },
     {
       path: '/pic',
-			component:pic
+			component:pic,
+			redirect:"/pic/piclist",
+			children:[
+				{path:"piclist",component:PicList},
+				{path:"picdetails/:index",name:"picdetails",component:PicDetails}
+			]
     },
     {
       path: '/',

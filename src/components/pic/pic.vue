@@ -3,6 +3,7 @@
 		<v-header :bg="bg">
 			{{title}}
 		</v-header>
+		<router-view></router-view>
 		<tab-bar :bg="bg">
 		</tab-bar>	
   </div>
@@ -30,5 +31,7 @@ export default {
 
 
 <style scoped>
-
+.pic{
+	padding:1.75rem 0  2.4rem;
+}
 </style>

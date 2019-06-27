@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import store from './vuex/index.js'
 
 import Axios from "axios"
 Vue.prototype.$http = Axios
@@ -10,6 +11,8 @@ Vue.prototype.$http = Axios
 import "../static/reset/reset.css"
 import "../static/reset/reset.js"
 
+	import VueTouch from "vue-touch"
+	Vue.use(VueTouch, {name: 'v-touch'})
 
 Vue.config.productionTip = false
 
@@ -17,6 +20,7 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })

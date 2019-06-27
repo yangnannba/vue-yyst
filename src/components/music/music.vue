@@ -18,6 +18,7 @@
 				  :list="list"
 		  >
 		  </aplayer>
+		  <div class="loading" v-else><img src="../../assets/img/loading.gif" /></div>
 		<tab-bar :bg="bg">
 		</tab-bar>	
   </div>
@@ -75,5 +76,8 @@ export default {
 <style scoped>
 .music{
 	padding:1.75rem 0  2.4rem;
+}
+.loading{
+	text-align: center;
 }
 </style>
