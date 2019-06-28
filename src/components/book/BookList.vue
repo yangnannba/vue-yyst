@@ -8,12 +8,13 @@
 	</swipe>
 	
 	<ul class="book-ul">
-		<li v-for="item in books" @click="tobookdetail(item.id)" >
+		<li class="itembook" v-for="item in books" @click="tobookdetail(item.id)" >
 			<img :src="item.images.large" />
 			<p>{{item.title}}</p>
 		</li>
+		
 	</ul>
-
+    <div class="loading" v-if="loading"><img src="../../assets/img/loading.gif" /></div>
   </div>
 </template>
 
@@ -31,7 +32,8 @@ export default {
 			{src:"./static/img/banner-1.jpg"},
 			{src:"./static/img/banner-2.jpg"},
 			{src:"./static/img/banner-3.jpg"}
-		]
+		],
+		loading:true
 
     }
   },
@@ -39,6 +41,7 @@ export default {
 	  getbook:function(){
 		  this.$http.get("/api/v2/book/search?q=%E5%89%8D%E7%AB%AF&count=20").then((res)=>{
 			  this.books=res.data.books;
+			  this.loading=false
 		  })
 	  },
 	  tobookdetail:function(id){
@@ -81,9 +84,9 @@ export default {
 	flex-basis: 45%;
 	width:45%;
 	margin-bottom: 0.8rem;
-	box-shadow: 0 0.2rem 0.3rem #e2e2e2,0 -0.1rem 0.4rem #e2e2e2;
+	box-shadow: 0 0.1rem 0.2rem #e2e2e2,0 -0.1rem 0.2rem #e2e2e2;
 }
-.book-ul li img{
+.book-ul li.itembook img{
 	width: 100%;
 
 	display: block;
@@ -99,5 +102,9 @@ export default {
 	text-overflow: ellipsis;
 	line-height: 2em;
 	
+}
+.loading{
+	text-align: center;
+	padding:0.2rem 0;
 }
 </style>
