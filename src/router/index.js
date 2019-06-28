@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import movie from '@/components/movie/movie'
-import music from '@/components/music/music'
-import book from '@/components/book/book'
-import pic from '@/components/pic/pic'
+import movie from '@/components/movie/Movie'
+import music from '@/components/music/Music'
+import book from '@/components/book/Book'
+import pic from '@/components/pic/Pic'
 
 import MovieList from '@/components/movie/MovieList'
 import MovieDetails from '@/components/movie/MovieDetails'
